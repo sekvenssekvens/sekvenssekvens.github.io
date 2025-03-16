@@ -19,14 +19,14 @@
 
         <div class="trigger">
           <a class="page-link" href="/"><span>Home</span></a>
-          <a class="page-link" href="/events?old=true"><span>Events</span></a>
+          <a class="page-link" href="/_pages/events?old=true"><span>Events</span></a>
 
           {%- for path in page_paths -%}
             {%- assign my_page = site.pages | where: "path", path | first -%}
             {%- if my_page.title  and my_page.title != "Frontpage" -%}
             {%- if my_page.title  and my_page.title != "Events" -%}
 
-            <a class="page-link" href="{{ my_page.url | relative_url }}"><span>{{ my_page.title | escape }}</span></a>
+            <a class="page-link" href="/_pages{{ my_page.url | relative_url }}"><span>{{ my_page.title | escape }}</span></a>
             {%- endif -%}
             {%- endif -%}
           {%- endfor -%}

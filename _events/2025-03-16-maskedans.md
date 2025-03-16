@@ -1,7 +1,8 @@
 ---
 layout: event
-start: 04-04-2025 21:00
+start: 2025-04-04
 venue: Maskinen
 price: 80
-title: "Maskedans "
+title: "Maskedans"
+draft: true
 ---

@@ -33,7 +33,7 @@
       const elm = events[i];
       new Date()
       const parts = elm.getAttribute("x-date").slice(0, 10).split("-").map(x => parseInt(x))
-      const date = new Date(parts[2], parts[1] - 1, parts[0]);
+      const date = new Date(parts[0], parts[1] - 1, parts[2]);
       console.log(parts, date, now)
       if (date < now) {
         elm.style.display = "none"

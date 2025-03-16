@@ -5,7 +5,7 @@
       {
         "label": "Start Jekyll",
         "type": "shell",
-        "command": "bundle exec jekyll serve --livereload",
+        "command": "bundle exec jekyll serve --verbose --livereload",
         "group": {
           "kind": "build",
           "isDefault": true

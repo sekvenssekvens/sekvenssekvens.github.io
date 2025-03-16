@@ -7,10 +7,10 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-header_pages:
-  - kontakt.md
 minima:
   skin: classic
+include: ['_pages', '_events', '_artists', '_merchs', '_releases']
+
 collections:
   pages:
     collections_dir: _pages

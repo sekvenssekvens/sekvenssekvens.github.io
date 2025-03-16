@@ -3,70 +3,74 @@ layout: base
 ---
 
 <style>
-  
 </style>
 
 <div class="post">
-
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title | escape }}</h1>
-  </header>
+    <header class="post-header">
+        <div class="glitch-wrapper">
+            <h1 class="glitch" data-text="{{ page.title | escape }}">{{ page.title | escape }}</h1>
+        </div>
+    </header>
 
     {%- if site.artists.size > 0 -%}
 
     <ul class="post-list">
         {%- for artist in site.artists -%}
-            <h3>
-              <a class="post-link" href="{{ artist.url | relative_url }}">
+        <li class="event-post">
+            <a class="post-link" href="{{ artist.url | relative_url }}">
                 {{ artist.title | escape }}
-              </a>
-            </h3>
-            <div class="meta">
+            </a>
+            {%- if artist.genres.size > 0 -%}
+            <span class="genres">Plays:
+                {%- for genre in artist.genres -%}
+                <div class="genre">{{ genre }}</div>
+                {%- endfor -%}
+            </span>
+            {%- endif -%}
+            {%- if artist.cover -%}
+
+
+            <img class="cover" src="{{ artist.cover | prepend: site.baseurl }}" alt="{{ artist.title }}"
+                title="{{ artist.title }}">
+            {%- endif -%}
+            <ul class="artistlinks">Links:
                 {%- if artist.soundcloudlink -%}
-                <a class="artist-link" href="{{ artist.soundcloudlink }}">soundcloud</a>
-                {%- endif -%}
-                {%- if artist.youtubelink -%}
-                <a class="artist-link" href="{{ artist.youtubelink }}">youtubelink</a>
+                <li class="artistlink"><a  href="{{ artist.soundcloudlink }}">soundcloud</a></li>
                 {%- endif -%}
                 {%- if artist.instagramlink -%}
-                <a class="artist-link" href="{{ artist.instagramlink }}">instagram</a>
+                <li class="artistlink"><a  href="{{ artist.instagramlink }}">instagram</a></li>
+                {%- endif -%}
+                {%- if artist.facebooklink -%}
+                <li class="artistlink"><a  href="{{ artist.facebooklink }}">facebook</a></li>
+                {%- endif -%}
+                {%- if artist.bandcamplink -%}
+                <li class="artistlink"><a  href="{{ artist.bandcamplink }}">bandcamp</a></li>
+                {%- endif -%}
+                {%- if artist.residentadvisorlink -%}
+                <li class="artistlink"><a  href="{{ artist.residentadvisorlink }}">residentadvisor</a></li>
+                {%- endif -%}
+                {%- if artist.youtubelink -%}
+                <li class="artistlink"><a  href="{{ artist.youtubelink }}">youtube</a></li>
                 {%- endif -%}
                 {%- if artist.websitelink -%}
-                <a class="artist-link" href="{{ artist.websitelink }}"> website</a>
+                <li class="artistlink"><a  href="{{ artist.websitelink }}">website</a></li>
                 {%- endif -%}
-                {%- if artist.websitelink -%}
-                <a class="artist-link" href="{{ artist.websitelink }}"> website</a>
-                {%- endif -%}
-              {%- if artist.websitelink -%}
-              <a class="artist-link" href="{{ artist.websitelink }}"> website</a>
-              {%- endif -%}
-              {%- if artist.genres.size > 0 -%}
-              <ul class="genres-list">
-              {%- for genre in artist.genres -%}
-              <li class="genre">{{ genre }} </li>
-              {%- endfor -%}
             </ul>
 
-              {%- endif -%}
+       
 
 
-              </div>
-              {%- if event.ticketlink -%}
-              <a class="ticketlink" href="{{event.ticketlink}}">Tickets</a>
-              {%- endif -%}
-      
-            </div>
-      
-            {%- if !!event.cover -%}
-      
-            <img src="{{ event.cover | prepend: site.baseurl }}" alt="{{ event.title }}" title="{{ event.title }}">
-            {%- endif -%}
+
+
             <div class="post-content e-content" itemprop="articleBody">
-              {{ event.content }}
+                {{ artist.content }}
             </div>
-          </li>
+        </li>
+
         {%- endfor -%}
     </ul>
 
     {%- endif -%}
+
+
 </div>

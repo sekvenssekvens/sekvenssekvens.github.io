@@ -1,11 +1,14 @@
 ---
 layout: event
-start: 05-04-2025 20:00
+start: 2025-04-05
+starthour: 20
 venue: Hulen
 price: 0
 title: Maskedans (hulen)
-ticketlink: "google.com"
 cover: /media/maskedans.png
+draft: true
 ---
 
 lol her er lidt tekst
+
+**foo**

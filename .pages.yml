@@ -55,15 +55,18 @@ content:
       - { name: soundcloudlink, label: Soundcloud Link, type: string, required: false }
       - { name: body, label: Body, type: rich-text }
   - name: events
-    label: events
+    label: Events
     type: collection
     path: _events
     view:
       fields: [ cover, date, price, title ]
     fields:
       - { name: layout, type: string, hidden: true, default: event }
-      - { name: start, label: Start Date, type: date, required: true, options: { time:true, format: dd-MM-yyyy HH:mm } }
-      - { name: end, label: End Date, type: date, required: false, options: { time:true, format: dd-MM-yyyy HH:mm } }
+      - { name: draft, label: Draft, type: boolean, default: false }
+      - { name: start, label: Start Date, type: date, required: true, options: {format: yyyy-MM-dd} }
+      - { name: starthour, label: Start hour, type: number, required: true, options: {min: 0, max:23} }
+      - { name: end, label: End Date, type: date, required: false, options: { format: yyyy-MM-dd } }
+      - { name: endhour, label: End hour, type: number, required: false, options: {min: 0, max:23} }
       - { name: venue, label: Venue, type: string, required: true }
       - { name: price, label: Price, type: number, required: true, default: 0 }
       - { name: ticketlink, label: Ticket Link, type: string, required: false }
@@ -77,7 +80,7 @@ content:
     view:
       fields: [ cover,price, title ]
     fields:
-      - { name: layout, type: string, hidden: true, default: event }
+      - { name: layout, type: string, hidden: true, default: merch }
       - { name: price, label: Price, type: number, required: true, default: 0 }
       - { name: buylink, label: Buy Link, type: string, required: false }
       - { name: cover, label: Cover image, type: image }

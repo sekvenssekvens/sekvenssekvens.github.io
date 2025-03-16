@@ -20,8 +20,11 @@ layout: base
 </style>
 
 <div class="post">
-    <div class="events-heading"><a href="/events" class="new-events">Events</a> <a href="/events?old=true">(Alle
-            Events)</a></div>
+    <header class="post-header">
+        <div class="glitch-wrapper">
+            <h1 class="glitch" data-text="{{ page.title | escape }}">{{ page.title | escape }}</h1>
+         </div>
+      </header>
 
     {%- if site.events.size > 0 -%}
 
@@ -50,7 +53,7 @@ layout: base
             </i>
                  </span>
               
-              {%- if !!event.cover -%}
+              {%- if event.cover -%}
   
               <img src="{{ event.cover | prepend: site.baseurl }}" alt="{{ event.title }}" title="{{ event.title }}">
   {%- endif -%}

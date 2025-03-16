@@ -2,60 +2,62 @@
 layout: base
 ---
 
-<style>
-   
-    .new-events {
-        color: gray;
-        font-size: 2.625rem;
-
-    }
-</style>
-
-<div class="post">
+<article class="post">
     <header class="post-header">
-        <h1 class="post-title">{{ page.title | escape }}</h1>
-      </header>
-    
-    {%- if site.events.size > 0 -%}
+        <div class="glitch-wrapper">
+            <h1 class="glitch" data-text="{{ page.title | escape }}">{{ page.title | escape }}</h1>
+        </div>
+    </header>
+
 
     <ul class="post-list">
-        {%- assign date_format = "%-d %b %Y - %H:%M" -%}
-        {%- for event in site.events -%}
-        <li class="event-post" x-date="{{ event.start }} ">
-            <h3>
-              <a class="post-link" href="{{ event.url | relative_url }}">
-                {{ event.title | escape }}
-              </a>
-            </h3>
-            <div class="meta">
-              <div class="start-date"> {{ event.start | date: date_format }}
-              </div>
-      
-              {%- if event.end -%}
-              <div class="end-date"> {{ event.end | date: date_format }}
-              </div>
-              {%- endif -%}
-      
-              <div class="price">{%- if event.price != 0 -%} {{ event.price}}kr {%- else -%} gratis{%- endif -%}
-              </div>
-              {%- if event.ticketlink -%}
-              <a class="ticketlink" href="{{event.ticketlink}}">Tickets</a>
-              {%- endif -%}
-      
-            </div>
-      
-            {%- if !!event.cover -%}
-      
-            <img src="{{ event.cover | prepend: site.baseurl }}" alt="{{ event.title }}" title="{{ event.title }}">
+        {%- assign year_format = " (%Y) " -%}
+        {%- assign date_format = "%-d. %b." -%}
+        {% assign sorted = site.events | sort: 'start' | reverse  %}
+
+        {%- for event in sorted -%}
+            {%- if event.draft!=true -%}
+                <li class="event-post" x-date="{{ event.start }} ">
+                    <a class="post-link" href="{{ event.url | relative_url }}">
+                        {{ event.title | escape }}
+                    </a>
+                    <div class="meta">
+                        <div class="date">🚀&nbsp;{{ event.start | date: date_format }}&nbsp;@ {{ event.starthour | prepend:
+                            '00' | slice: -2, 2
+                            }}:00 <i>{{ event.start | date: year_format }}</i>
+                        </div>
+
+                        {%- if event.end -%}
+                        <div class="date">💥 {{ event.end | date: date_format }}
+                            {%- if event.endhour -%}&nbsp;@ {{ event.endhour | prepend: '00' | slice: -2, 2 }}:00
+                            {%- endif -%}
+                        </div>
+                        {%- endif -%}
+
+
+                        <div class="price">🎫&nbsp; {%- if event.price != 0 -%} {{ event.price }}kr {%- else -%} gratis{%- endif
+                            -%}
+                            {%- if event.ticketlink -%}
+                            <a class="ticketlink" href="{{event.ticketlink}}">buy ticket</a>
+                            {%- endif -%}
+                        </div>
+
+                        <div class="date">📍&nbsp;{{ event.venue }}</div>
+                    </div>
+
+                    {%- if event.cover -%}
+
+                    <img class="cover" src="{{ event.cover | prepend: site.baseurl }}" alt="{{ event.title }}"
+                        title="{{ event.title }}">
+                    {%- endif -%}
+                    <div class="post-content e-content" itemprop="articleBody">
+                        {{ event.content }}
+                      </div>
+                    
+                </li>
             {%- endif -%}
-            <div class="post-content e-content" itemprop="articleBody">
-              {{ event.content }}
-            </div>
-          </li>
+
         {%- endfor -%}
     </ul>
-
-    {%- endif -%}
-
-
-</div>
+    
+</article>
