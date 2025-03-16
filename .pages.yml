@@ -12,7 +12,7 @@ content:
       - { name: title, label: Title, type: string, required: true }
       - { name: body, label: Body, type: rich-text }
   - name: pages
-    label: Pages
+    label: Pages (careful editing here!)
     type: collection
     path: _pages
     view:
