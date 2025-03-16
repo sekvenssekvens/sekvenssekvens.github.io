@@ -3,15 +3,13 @@ content:
   - name: posts
     label: Posts
     type: collection
-    path: _posts
+    path: _news
     view:
       fields: [ cover, title ]
     fields:
-      - { name: layout, type: string, hidden: true, default: post }
+      - { name: layout, type: string, hidden: true, default: news }
       - { name: cover, label: Cover image, type: image }
       - { name: title, label: Title, type: string, required: true }
-#      - { name: categories, label: Categories, type: select, options: { values: [ "misc", "junk" ] } }
-      - { name: author, label: Authors, type: string, list: true }
       - { name: body, label: Body, type: rich-text }
   - name: pages
     label: Pages
@@ -20,9 +18,40 @@ content:
     view:
       fields: [ cover, title ]
     fields:
-      - { name: layout, type: string, hidden: true, default: post }
+      - { name: layout, type: string, hidden: true, default: pages }
       - { name: cover, label: Cover image, type: image }
       - { name: title, label: Title, type: string, required: true }
+      - { name: body, label: Body, type: rich-text }
+  - name: artists
+    label: Artists
+    type: collection
+    path: _artists
+    view:
+      fields: [ cover, title ]
+    fields:
+      - { name: layout, type: string, hidden: true, default: artists }
+      - { name: cover, label: Cover image, type: image }
+      - { name: title, label: Title, type: string, required: true }
+      - { name: soundcloudlink, label: Soundcloud Link, type: string, required: false }
+      - { name: instagramlink, label: Instagram Link, type: string, required: false }
+      - { name: facebooklink, label: Facebook Link, type: string, required: false }
+      - { name: bandcamplink, label: Bandcamp Link, type: string, required: false }
+      - { name: residentadvisorlink, label: residentadvisor Link, type: string, required: false }
+      - { name: youtubelink, label: youtube Link, type: string, required: false }
+      - { name: websitelink, label: website Link, type: string, required: false }
+      - { name: body, label: Body, type: rich-text }
+  - name: releases
+    label: Releases
+    type: collection
+    path: _releases
+    view:
+      fields: [ cover, title, artist ]
+    fields:
+      - { name: layout, type: string, hidden: true, default: releases }
+      - { name: cover, label: Cover image, type: image }
+      - { name: title, label: Title, type: string, required: true }
+      - { name: artist, label: Artists, type: string, list: true }
+      - { name: soundcloudlink, label: Soundcloud Link, type: string, required: false }
       - { name: body, label: Body, type: rich-text }
   - name: events
     label: events
@@ -31,10 +60,11 @@ content:
     view:
       fields: [ cover, date, price, title ]
     fields:
-      - { name: layout, type: string, hidden: true, default: event }
-      - { name: date, label: Date, type: date, required: true, options: { time:false, format: dd-MM-yyyy HH:mm } }
-      - { name: time, label: Time, type: date, required: false, options: { time:true, format: HH:mm } }
+      - { name: layout, type: string, hidden: true, default: events }
+      - { name: start, label: Start Date, type: date, required: true, options: { time:false, format: dd-MM-yyyy HH:mm } }
+      - { name: end, label: End Date, type: date, required: false, options: { time:false, format: dd-MM-yyyy HH:mm } }
       - { name: price, label: Price, type: number, required: true, default: 0 }
+      - { name: ticketlink, label: Ticket Link, type: string, required: false }
       - { name: cover, label: Cover image, type: image }
       - { name: title, label: Title, type: string, required: true }
       - { name: body, label: Body, type: rich-text }
