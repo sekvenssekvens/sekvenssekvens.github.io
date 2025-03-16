@@ -1,7 +1,7 @@
 media: media
 content:
-  - name: posts
-    label: Posts
+  - name: news
+    label: News
     type: collection
     path: _news
     view:
