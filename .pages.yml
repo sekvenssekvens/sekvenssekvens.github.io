@@ -64,6 +64,7 @@ content:
       - { name: layout, type: string, hidden: true, default: events }
       - { name: start, label: Start Date, type: date, required: true, options: { time:false, format: dd-MM-yyyy HH:mm } }
       - { name: end, label: End Date, type: date, required: false, options: { time:false, format: dd-MM-yyyy HH:mm } }
+      - { name: venue, label: Venue, type: string, required: true }
       - { name: price, label: Price, type: number, required: true, default: 0 }
       - { name: ticketlink, label: Ticket Link, type: string, required: false }
       - { name: cover, label: Cover image, type: image }
