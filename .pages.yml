@@ -39,8 +39,8 @@ content:
       - { name: residentadvisorlink, label: residentadvisor Link, type: string, required: false }
       - { name: youtubelink, label: youtube Link, type: string, required: false }
       - { name: websitelink, label: website Link, type: string, required: false }
-      - { name: body, label: Body, type: rich-text }
       - { name: genres, label: Genres, type: string, list: true }
+      - { name: body, label: Body, type: rich-text }
   - name: releases
     label: Releases
     type: collection
