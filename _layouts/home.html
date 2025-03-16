@@ -1,7 +1,11 @@
 ---
 layout: base
 ---
-
+<style>
+  .banner-img {
+    width: 100%
+  }
+</style>
 <div class="home">
   {%- if page.title -%}
   <h1 class="page-heading">{{ page.title }}</h1>
@@ -10,6 +14,7 @@ layout: base
 
   {%- for page in site.pages -%}
   {%- if page.title and page.title == "Frontpage" -%}
+  <img class="banner-img" src="{{ page.cover }}" alt="" />
   {{page.content}}
   {%- endif -%}
   {%- endfor -%}
@@ -23,10 +28,10 @@ layout: base
 
 
   {%- if site.events.size > 0 -%}
-  <h2 class="coming">Kommende events:</h2>
+  <h2 class="glitchy">Upcoming events 👇</h2>
 
   <ul class="post-list">
-    {%- assign date_format = "%-d %b %Y - %H:%M" -%}
+    {%- assign date_format = "%-d %b %Y @ %H:%M" -%}
     {%- for event in site.events -%}
     <li class="event-post" x-date="{{ event.start }} ">
       <h3>
@@ -35,25 +40,27 @@ layout: base
         </a>
       </h3>
       <div class="meta">
-        <div class="start-date"> {{ event.start | date: date_format }}
+        <div class="date">📅 {{ event.start | date: date_format }} 
+          {%- if event.end -%} - {{ event.end | date: date_format }}
+          {%- endif -%}
         </div>
 
-        {%- if event.end -%}
-        <div class="end-date"> {{ event.end | date: date_format }}
-        </div>
-        {%- endif -%}
 
-        <div class="price">{%- if event.price != 0 -%} {{ event.price}}kr {%- else -%} gratis{%- endif -%}
-        </div>
-        {%- if event.ticketlink -%}
-        <a class="ticketlink" href="{{event.ticketlink}}">Tickets</a>
+        <div class="price">🎫&nbsp; {%- if event.price != 0 -%} {{ event.price }}kr {%- else -%} gratis{%- endif -%}
+          {%- if event.ticketlink -%}
+        <a class="ticketlink" href="{{event.ticketlink}}">buy ticket</a>
         {%- endif -%}
+        </div>
+        
+        <div class="date">📍&nbsp;{{ event.venue }} 
+
+        
 
       </div>
 
       {%- if !!event.cover -%}
 
-      <img src="{{ event.cover | prepend: site.baseurl }}" alt="{{ event.title }}" title="{{ event.title }}">
+      <img class="cover" src="{{ event.cover | prepend: site.baseurl }}" alt="{{ event.title }}" title="{{ event.title }}">
       {%- endif -%}
       <div class="post-content e-content" itemprop="articleBody">
         {{ event.content }}

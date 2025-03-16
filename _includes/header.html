@@ -4,7 +4,7 @@
     {%- assign default_paths = site.pages | map: "path" -%}
     {%- assign page_paths =  default_paths -%}
     {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
-    <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+    <!-- <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a> -->
 
     {%- if titles_size > 0 -%}
       <nav class="site-nav">
@@ -18,14 +18,15 @@
         </label>
 
         <div class="trigger">
-          <a class="page-link" href="/events?old=true">Events</a>
+          <a class="page-link" href="/"><span>Home</span></a>
+          <a class="page-link" href="/events?old=true"><span>Events</span></a>
 
           {%- for path in page_paths -%}
             {%- assign my_page = site.pages | where: "path", path | first -%}
             {%- if my_page.title  and my_page.title != "Frontpage" -%}
             {%- if my_page.title  and my_page.title != "Events" -%}
 
-            <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+            <a class="page-link" href="{{ my_page.url | relative_url }}"><span>{{ my_page.title | escape }}</span></a>
             {%- endif -%}
             {%- endif -%}
           {%- endfor -%}

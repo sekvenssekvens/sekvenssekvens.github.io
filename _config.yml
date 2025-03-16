@@ -36,3 +36,8 @@ collections:
     collections_dir: _releases
     output: true
     permalink: /:path
+
+  merchs:
+    collections_dir: _merchs
+    output: true
+    permalink: /:path

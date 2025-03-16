@@ -3,15 +3,7 @@ layout: base
 ---
 
 <style>
-    .events-heading {
-
-        a {
-            color: black;
-        }
-
-        padding-bottom: 15px;
-    }
-
+   
     .new-events {
         color: gray;
         font-size: 2.625rem;
@@ -20,8 +12,10 @@ layout: base
 </style>
 
 <div class="post">
-    <h2>Events:</h2>
-
+    <header class="post-header">
+        <h1 class="post-title">{{ page.title | escape }}</h1>
+      </header>
+    
     {%- if site.events.size > 0 -%}
 
     <ul class="post-list">

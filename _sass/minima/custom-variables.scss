@@ -1,4 +1,18 @@
 // Placeholder to allow overriding predefined variables smoothly.
 // https://github.com/lokallistenlangeland/blog/blob/master/_sass/minima/skins/auto.scss
 
-$background-color:      #ffffff;
+$background-color:      #ff2222;
+$background-color-alpha: rgba($color: #000000, $alpha: 0.8);
+$text-color: white;
+$site-title-color: white;
+
+$link-base-color: #00ff00;
+
+
+$brand-color: yellow;
+
+
+$link-base-color: $lm-link-base-color;
+$link-visited-color: #0fff00;
+$link-hover-color: yellow;
+$border-color: #00ff00;

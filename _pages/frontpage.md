@@ -1,5 +1,5 @@
 ---
 layout: post
 title: Frontpage
+cover: /media/moh.icon.gif
 ---
-![](/media/moh.icon.gif)

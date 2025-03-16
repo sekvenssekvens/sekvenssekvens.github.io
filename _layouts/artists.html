@@ -7,7 +7,10 @@ layout: base
 </style>
 
 <div class="post">
-    <h2>Artists:</h2>
+
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+  </header>
 
     {%- if site.artists.size > 0 -%}
 
