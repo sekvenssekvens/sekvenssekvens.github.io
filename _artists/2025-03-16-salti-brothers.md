@@ -1,10 +1,6 @@
 ---
 layout: artist
+cover: /media/maskedans.png
 title: Salti Brothers
 soundcloudlink: https://soundcloud.com/salti-brothers
-genres:
-  - arab-tech
-  - lol
-cover: /media/maskedans.png
 ---
-**foo**
