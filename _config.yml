@@ -1,0 +1,23 @@
+title: Bedoon
+author:
+  name: Farid Salti
+  email: foo@bar.com
+description: Bedoon kaffebar
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+header_pages:
+  - kontakt.md
+minima:
+  skin: classic
+collections:
+  pages:
+    collections_dir: _pages
+    output: true
+    permalink: /:path
+
+  events:
+    collections_dir: _events
+    output: true
+    permalink: /:path

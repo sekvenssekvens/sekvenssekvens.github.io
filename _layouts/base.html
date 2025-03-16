@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: " en" }}">
+
+{%- include head.html -%}
+
+<body>
+
+  {%- include header.html -%}
+
+  <main class="page-content" aria-label="Content">
+    <div class="wrapper">
+      {{ content }}
+    </div>
+  </main>
+
+  {%- include footer.html -%}
+
+</body>
+
+<script>
+  const params = new Proxy(new URLSearchParams(window.location.search), {
+    get: (searchParams, prop) => searchParams.get(prop),
+  });
+  let showOldEvents = params.old;
+  if (!showOldEvents) {
+
+
+    const events = document.getElementsByClassName("event-post")
+    const coming = document.getElementsByClassName("coming")
+    events.length < coming.length <= 0 ? null : coming[0].style.display = "none";
+    console.log(events)
+    const now = new Date()
+    for (var i = 0; i < events.length; i++) {
+      const elm = events[i];
+      const parts = elm.getAttribute("x-date").slice(0, 10).split("-").map(x => parseInt(x))
+      const date = new Date(parts[0], parts[1] - 1, parts[2]);
+      if (date < now) {
+        elm.style.display = "none"
+      }
+
+
+    }
+  } else {
+
+  }
+
+</script>
+
+</html>

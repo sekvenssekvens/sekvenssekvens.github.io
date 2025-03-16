@@ -1,0 +1,67 @@
+---
+layout: base
+---
+
+<div class="home">
+  {%- if page.title -%}
+    <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%}
+  {% assign pages = site.pages %}
+
+  {%- for page in site.pages -%}
+    {%- if page.title  and page.title == "frontpage" -%}
+    {{page.content}}
+    {%- endif -%}
+  {%- endfor -%}
+
+
+  {% if site.paginate %}
+    {% assign posts = paginator.posts %}
+  {% else %}
+    {% assign posts = site.posts %}
+  {% endif %}
+
+
+  {%- if site.events.size > 0 -%}
+  <h2 class="coming">Kommende events:</h2>
+
+    <ul class="post-list">
+      {%- assign time_format = "%H:%M" -%}
+        {%- assign date_format = "%-d %b %Y " -%}
+        {%- for event in site.events -%}
+        <li class="event-post" x-date="{{ event.date }} ">
+          <h3>
+            <a class="post-link" href="{{ event.url | relative_url }}">
+                {{ event.title | escape }}
+            </a>
+        </h3>
+            <span class="meta">
+              <i>
+                {{ event.date | date: date_format }}
+
+                {%- if event.time -%}
+                @ {{ event.date | date: time_format }}
+
+                {%- else  -%}
+                    @ 10:00
+                {%- endif -%},&nbsp;
+                <span>{%- if event.price != 0 -%} {{ event.price}}kr  {%- else  -%} gratis{%- endif -%}
+            </span>
+          </i>
+               </span>
+            
+            {%- if !!event.cover -%}
+
+            <img src="{{ event.cover | prepend: site.baseurl }}" alt="{{ event.title }}" title="{{ event.title }}">
+{%- endif -%}
+            <div class="post-content e-content" itemprop="articleBody">
+                {{ event.content }}
+            </div>
+        </li>
+      {%- endfor -%}
+    </ul>
+
+
+  {%- endif -%}
+
+</div>

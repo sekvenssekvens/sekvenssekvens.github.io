@@ -1,0 +1,40 @@
+media: media
+content:
+  - name: posts
+    label: Posts
+    type: collection
+    path: _posts
+    view:
+      fields: [ cover, title ]
+    fields:
+      - { name: layout, type: string, hidden: true, default: post }
+      - { name: cover, label: Cover image, type: image }
+      - { name: title, label: Title, type: string, required: true }
+#      - { name: categories, label: Categories, type: select, options: { values: [ "misc", "junk" ] } }
+      - { name: author, label: Authors, type: string, list: true }
+      - { name: body, label: Body, type: rich-text }
+  - name: pages
+    label: Pages
+    type: collection
+    path: _pages
+    view:
+      fields: [ cover, title ]
+    fields:
+      - { name: layout, type: string, hidden: true, default: post }
+      - { name: cover, label: Cover image, type: image }
+      - { name: title, label: Title, type: string, required: true }
+      - { name: body, label: Body, type: rich-text }
+  - name: events
+    label: events
+    type: collection
+    path: _events
+    view:
+      fields: [ cover, date, price, title ]
+    fields:
+      - { name: layout, type: string, hidden: true, default: event }
+      - { name: date, label: Date, type: date, required: true, options: { time:false, format: dd-MM-yyyy HH:mm } }
+      - { name: time, label: Time, type: date, required: false, options: { time:true, format: HH:mm } }
+      - { name: price, label: Price, type: number, required: true, default: 0 }
+      - { name: cover, label: Cover image, type: image }
+      - { name: title, label: Title, type: string, required: true }
+      - { name: body, label: Body, type: rich-text }
