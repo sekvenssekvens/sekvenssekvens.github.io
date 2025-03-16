@@ -7,7 +7,7 @@ content:
     view:
       fields: [ cover, title ]
     fields:
-      - { name: layout, type: string, hidden: true, default: news }
+      - { name: layout, type: string, hidden: true, default: news_singular }
       - { name: cover, label: Cover image, type: image }
       - { name: title, label: Title, type: string, required: true }
       - { name: body, label: Body, type: rich-text }
@@ -18,7 +18,7 @@ content:
     view:
       fields: [ cover, title ]
     fields:
-      - { name: layout, type: string, hidden: true, default: pages }
+      - { name: layout, type: string, hidden: true, default: page }
       - { name: cover, label: Cover image, type: image }
       - { name: title, label: Title, type: string, required: true }
       - { name: body, label: Body, type: rich-text }
@@ -29,7 +29,7 @@ content:
     view:
       fields: [ cover, title ]
     fields:
-      - { name: layout, type: string, hidden: true, default: artists }
+      - { name: layout, type: string, hidden: true, default: artist }
       - { name: cover, label: Cover image, type: image }
       - { name: title, label: Title, type: string, required: true }
       - { name: soundcloudlink, label: Soundcloud Link, type: string, required: false }
@@ -48,7 +48,7 @@ content:
     view:
       fields: [ cover, title, artist ]
     fields:
-      - { name: layout, type: string, hidden: true, default: releases }
+      - { name: layout, type: string, hidden: true, default: release }
       - { name: cover, label: Cover image, type: image }
       - { name: title, label: Title, type: string, required: true }
       - { name: artist, label: Artists, type: string, list: true }
@@ -61,7 +61,7 @@ content:
     view:
       fields: [ cover, date, price, title ]
     fields:
-      - { name: layout, type: string, hidden: true, default: events }
+      - { name: layout, type: string, hidden: true, default: event }
       - { name: start, label: Start Date, type: date, required: true, options: { time:false, format: dd-MM-yyyy HH:mm } }
       - { name: end, label: End Date, type: date, required: false, options: { time:false, format: dd-MM-yyyy HH:mm } }
       - { name: venue, label: Venue, type: string, required: true }

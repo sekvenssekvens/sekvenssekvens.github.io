@@ -1,8 +1,8 @@
-title: Bedoon
+title: Sekvens
 author:
-  name: Farid Salti
-  email: foo@bar.com
-description: Bedoon kaffebar
+  name: Sekvens
+  email: sekvenskollektiv@gmail.com
+description: Sekvens kollektiv
 theme: minima
 plugins:
   - jekyll-feed
@@ -17,7 +17,22 @@ collections:
     output: true
     permalink: /:path
 
+  news:
+    collections_dir: _news
+    output: true
+    permalink: /:path
+
   events:
     collections_dir: _events
+    output: true
+    permalink: /:path
+
+  artists:
+    collections_dir: _artists
+    output: true
+    permalink: /:path
+
+  releases:
+    collections_dir: _releases
     output: true
     permalink: /:path

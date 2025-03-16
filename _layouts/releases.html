@@ -1,0 +1,67 @@
+---
+layout: base
+---
+
+<style>
+    .events-heading {
+
+        a {
+            color: black;
+        }
+
+        padding-bottom: 15px;
+    }
+
+    .new-events {
+        color: gray;
+        font-size: 2.625rem;
+
+    }
+</style>
+
+<div class="post">
+    <div class="events-heading"><a href="/events" class="new-events">Events</a> <a href="/events?old=true">(Alle
+            Events)</a></div>
+
+    {%- if site.events.size > 0 -%}
+
+    <ul class="post-list">
+        {%- assign time_format = "%H:%M" -%}
+        {%- assign date_format = "%-d %b %Y " -%}
+        {%- for event in site.events -%}
+        <li class="event-post" x-date="{{ event.date }} ">
+            <h3>
+              <a class="post-link" href="{{ event.url | relative_url }}">
+                  {{ event.title | escape }}
+              </a>
+          </h3>
+              <span class="meta">
+                <i>
+                  {{ event.date | date: date_format }}
+  
+                  {%- if event.time -%}
+                  @ {{ event.date | date: time_format }}
+  
+                  {%- else  -%}
+                      @ 10:00
+                  {%- endif -%},&nbsp;
+                  <span>{%- if event.price != 0 -%} {{ event.price}}kr  {%- else  -%} gratis{%- endif -%}
+              </span>
+            </i>
+                 </span>
+              
+              {%- if !!event.cover -%}
+  
+              <img src="{{ event.cover | prepend: site.baseurl }}" alt="{{ event.title }}" title="{{ event.title }}">
+  {%- endif -%}
+              <div class="post-content e-content" itemprop="articleBody">
+                  {{ event.content }}
+              </div>
+          </li>
+        {%- endfor -%}
+    </ul>
+
+    {%- endif -%}
+
+
+</div>
