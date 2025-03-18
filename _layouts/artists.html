@@ -39,7 +39,7 @@ layout: base
             <img class="cover" src="{{ artist.cover | prepend: site.baseurl }}" alt="{{ artist.title }}"
                 title="{{ artist.title }}">
             {%- endif -%}
-            <ul class="artistlinks">Links:
+            <ul class="artistlinks">
                 {%- if artist.soundcloudlink -%}
                 <li class="artistlink"><a  href="{{ artist.soundcloudlink }}">soundcloud</a></li>
                 {%- endif -%}

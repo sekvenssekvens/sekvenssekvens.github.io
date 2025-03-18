@@ -41,6 +41,7 @@ padding-bottom:0;
   padding-bottom: 5px;
   
   .cover {
+    min-width: 80%;
     max-width: 96%;
     padding-top:1em;
     margin: 0 2% 1em 2%;
@@ -49,10 +50,14 @@ padding-bottom:0;
     display:block;
     max-width: 96%;
     margin: 0 2% 1em 2%;
-    min-width: 50%;
+    min-width: 80%;
     max-width: 100%;
 
   }
+}
+.author-footer {
+  text-align: center;
+  padding: 1em 0 2em 0;
 }
 
 .site-nav {
@@ -94,13 +99,16 @@ flex-wrap: wrap;
 
 }
 .genre {
-  margin-left: 10px;
+  margin-right: 10px;
   margin-bottom: 10px;
   border-radius: 10px;
   padding: 0 5px;
   background-color: $pill-color;
   color:black
 
+}
+.artistlinks {
+  margin-bottom: 5px;
 }
 .post-link {
     font-size: 1.6em;
