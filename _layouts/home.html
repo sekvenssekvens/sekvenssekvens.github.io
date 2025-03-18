@@ -6,16 +6,23 @@ layout: base
     width: 100%
   }
 </style>
+<script>
+  const element = document.getElementById("homebutton") 
+  console.log(element)
+  element.classList.add("selected-page-link");
+</script>
 <div class="home">
-  {%- if page.title -%}
-  <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
-  {% assign pages = site.pages %}
 
   {%- for page in site.pages -%}
   {%- if page.title and page.title == "Frontpage" -%}
+  <div class="event-post">
+
   <img class="banner-img" src="{{ page.cover }}" alt="" />
   {{page.content}}
+  <div class="glitch-wrapper">
+    <h1 class="glitch" data-text="Upcoming events 👇">Upcoming events 👇</h1>
+  </div>
+  </div>
   {%- endif -%}
   {%- endfor -%}
 
@@ -28,9 +35,7 @@ layout: base
 
 
   {%- if site.events.size > 0 -%}
-  <div class="glitch-wrapper">
-    <h1 class="glitch" data-text="Upcoming events 👇">Upcoming events 👇</h1>
-  </div>
+
 
   <ul class="post-list">
     {%- assign year_format = " (%Y) " -%}
@@ -39,44 +44,46 @@ layout: base
     {%- if event.draft==true -%}
     {%- else -%}
     <li class="event-post" x-date="{{ event.start }} ">
-      <a class="post-link" href="{{ event.url | relative_url }}">
-        {{ event.title | escape }}
-      </a>
+      <header class="post-header">
+          <div class="glitch-wrapper">
+            <a  href="{{ event.url | relative_url }}"><h1 class="glitch" data-text="{{ event.title | escape }}">{{ event.title | escape }}</h1></a>
+          </div>
+        </header>
+               
       <div class="meta">
-        <div class="date">🚀&nbsp;{{ event.start | date: date_format }}&nbsp;@ {{ event.starthour | prepend: '00' |
-          slice: -2, 2
-          }}:00 <i>{{ event.start | date: year_format }}</i>
-        </div>
+          <div class="date">🚀&nbsp;{{ event.start | date: date_format }}&nbsp;@ {{ event.starthour | prepend:
+              '00' | slice: -2, 2
+              }}:00 <i>{{ event.start | date: year_format }}</i>
+          </div>
 
-        {%- if event.end -%}
-        <div class="date">💥 {{ event.end | date: date_format }}
-          {%- if event.endhour -%}&nbsp;@ {{ event.endhour | prepend: '00' | slice: -2, 2 }}:00
+          {%- if event.end -%}
+          <div class="date">💥 {{ event.end | date: date_format }}
+              {%- if event.endhour -%}&nbsp;@ {{ event.endhour | prepend: '00' | slice: -2, 2 }}:00
+              {%- endif -%}
+          </div>
           {%- endif -%}
-        </div>
-        {%- endif -%}
 
 
-        <div class="price">🎫&nbsp; {%- if event.price != 0 -%} {{ event.price }}kr {%- else -%} gratis{%- endif -%}
-          {%- if event.ticketlink -%}
-          <a class="ticketlink" href="{{event.ticketlink}}">buy ticket</a>
-          {%- endif -%}
-        </div>
+          <div class="price">🎫&nbsp; {%- if event.price -%} {{ event.price }}kr {%- else -%} gratis{%- endif
+              -%}
+              {%- if event.ticketlink -%}
+              <a class="ticketlink" href="{{event.ticketlink}}">buy ticket</a>
+              {%- endif -%}
+          </div>
 
-        <div class="date">📍&nbsp;{{ event.venue }}</div>
-
-
-
+          <div class="date">📍&nbsp;{{ event.venue }}</div>
       </div>
 
       {%- if event.cover -%}
 
       <img class="cover" src="{{ event.cover | prepend: site.baseurl }}" alt="{{ event.title }}"
-        title="{{ event.title }}">
+          title="{{ event.title }}">
       {%- endif -%}
       <div class="post-content e-content" itemprop="articleBody">
-        {{ event.content }}
-      </div>
-    </li>
+          {{ event.content }}
+        </div>
+      
+  </li>
     {%- endif -%}
 
     {%- endfor -%}

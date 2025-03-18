@@ -1,16 +1,44 @@
 ---
 layout: base
 ---
-<div class="post">
+<div class="event-post"">
+  <header class="post-header">
+      <div class="glitch-wrapper">
+        <a  href="{{ page.url | relative_url }}"><h1 class="glitch" data-text="{{ page.title | escape }}">{{ page.title | escape }}</h1></a>
+      </div>
+    </header>
+           
+  <div class="meta">
+      <div class="date">🚀&nbsp;{{ page.start | date: date_format }}&nbsp;@ {{ page.starthour | prepend:
+          '00' | slice: -2, 2
+          }}:00 <i>{{ page.start | date: year_format }}</i>
+      </div>
 
-    <header class="post-header">
-        <div class="glitch-wrapper">
-            <h1 class="glitch" data-text="{{ page.title | escape }}">{{ page.title | escape }}</h1>
-         </div>
-      </header>
+      {%- if page.end -%}
+      <div class="date">💥 {{ page.end | date: date_format }}
+          {%- if page.endhour -%}&nbsp;@ {{ page.endhour | prepend: '00' | slice: -2, 2 }}:00
+          {%- endif -%}
+      </div>
+      {%- endif -%}
 
-  <div class="post-content">
-    {{ content }}
+
+      <div class="price">🎫&nbsp; {%- if page.price -%} {{ page.price }}kr {%- else -%} gratis{%- endif
+          -%}
+          {%- if page.ticketlink -%}
+          <a class="ticketlink" href="{{page.ticketlink}}">buy ticket</a>
+          {%- endif -%}
+      </div>
+
+      <div class="date">📍&nbsp;{{ page.venue }}</div>
   </div>
 
-</div>
+  {%- if page.cover -%}
+
+  <img class="cover" src="{{ page.cover | prepend: site.baseurl }}" alt="{{ page.title }}"
+      title="{{ page.title }}">
+  {%- endif -%}
+  <div class="post-content e-content" itemprop="articleBody">
+      {{ page.content }}
+    </div>
+  
+  </div>

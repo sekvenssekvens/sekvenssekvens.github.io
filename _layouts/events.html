@@ -1,13 +1,12 @@
 ---
 layout: base
 ---
-
+<script>
+    const element = document.getElementById("eventsbutton") 
+    console.log(element)
+    element.classList.add("selected-page-link");
+</script>
 <div class="post">
-    <header class="post-header">
-        <div class="glitch-wrapper">
-            <h1 class="glitch" data-text="{{ page.title | escape }}">{{ page.title | escape }}</h1>
-        </div>
-    </header>
 
 
     <ul class="post-list">
@@ -18,9 +17,12 @@ layout: base
         {%- for event in sorted -%}
             {%- if event.draft!=true -%}
                 <li class="event-post" x-date="{{ event.start }} ">
-                    <a class="post-link" href="{{ event.url | relative_url }}">
-                        {{ event.title | escape }}
-                    </a>
+                    <header class="post-header">
+                        <div class="glitch-wrapper">
+                          <a  href="{{ event.url | relative_url }}"><h1 class="glitch" data-text="{{ event.title | escape }}">{{ event.title | escape }}</h1></a>
+                        </div>
+                      </header>
+                             
                     <div class="meta">
                         <div class="date">🚀&nbsp;{{ event.start | date: date_format }}&nbsp;@ {{ event.starthour | prepend:
                             '00' | slice: -2, 2
@@ -35,7 +37,7 @@ layout: base
                         {%- endif -%}
 
 
-                        <div class="price">🎫&nbsp; {%- if event.price != 0 -%} {{ event.price }}kr {%- else -%} gratis{%- endif
+                        <div class="price">🎫&nbsp; {%- if event.price -%} {{ event.price }}kr {%- else -%} gratis{%- endif
                             -%}
                             {%- if event.ticketlink -%}
                             <a class="ticketlink" href="{{event.ticketlink}}">buy ticket</a>

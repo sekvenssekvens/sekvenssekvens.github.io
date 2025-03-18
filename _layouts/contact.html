@@ -1,0 +1,22 @@
+---
+layout: base
+---
+
+
+<script>
+  const element = document.getElementById("contactbutton") 
+  console.log(element)
+  element.classList.add("selected-page-link");
+</script>
+<div class="event-post">
+
+  <header class="post-header">
+    <div class="glitch-wrapper">
+        <h1 class="glitch" data-text="{{ page.title | escape }}">{{ page.title | escape }}</h1>
+     </div>
+  </header>
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+</div>

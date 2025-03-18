@@ -1,16 +1,57 @@
 ---
 layout: base
 ---
-<article class="post">
+<div class="event-post">
 
-    <header class="post-header">
-        <div class="glitch-wrapper">
-            <h1 class="glitch" data-text="{{ page.title | escape }}">{{ page.title | escape }}</h1>
-         </div>
-      </header>
+  <header class="post-header">
+    <div class="glitch-wrapper">
+      <h1 class="glitch" data-text="{{ page.title | escape }}">{{ page.title | escape }}</h1>
+    </div>
+  </header>
+  {%- if page.genres.size > 0 -%}
+  <div class="genres">
+      {%- for genre in page.genres -%}
+      <div class="genre">{{ genre }}</div>
+      {%- endfor -%}
+  </div>
+  {%- endif -%}
+  {%- if page.cover -%}
 
-  <div class="post-content">
-    {{ content }}
+
+  <img class="cover" src="{{ page.cover | prepend: site.baseurl }}" alt="{{ page.title }}"
+    title="{{ page.title }}">
+  {%- endif -%}
+  <ul class="artistlinks">Links:
+    {%- if page.soundcloudlink -%}
+    <li class="artistlink"><a href="{{ page.soundcloudlink }}">soundcloud</a></li>
+    {%- endif -%}
+    {%- if page.instagramlink -%}
+    <li class="artistlink"><a href="{{ page.instagramlink }}">instagram</a></li>
+    {%- endif -%}
+    {%- if page.facebooklink -%}
+    <li class="artistlink"><a href="{{ page.facebooklink }}">facebook</a></li>
+    {%- endif -%}
+    {%- if page.bandcamplink -%}
+    <li class="artistlink"><a href="{{ page.bandcamplink }}">bandcamp</a></li>
+    {%- endif -%}
+    {%- if page.residentadvisorlink -%}
+    <li class="artistlink"><a href="{{ page.residentadvisorlink }}">residentadvisor</a></li>
+    {%- endif -%}
+    {%- if page.youtubelink -%}
+    <li class="artistlink"><a href="{{ page.youtubelink }}">youtube</a></li>
+    {%- endif -%}
+    {%- if page.websitelink -%}
+    <li class="artistlink"><a href="{{ page.websitelink }}">website</a></li>
+    {%- endif -%}
+  </ul>
+
+
+
+
+
+
+  <div class="post-content e-content" itemprop="articleBody">
+    {{ page.content }}
   </div>
 
-</article>
+</div>

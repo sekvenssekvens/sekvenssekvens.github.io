@@ -5,66 +5,33 @@ layout: base
 <style>
   
 </style>
+<script>
+  const element = document.getElementById("releasesbutton") 
+  console.log(element)
+  element.classList.add("selected-page-link");
+</script>
 
 <div class="post">
-
-    <header class="post-header">
-        <div class="glitch-wrapper">
-            <h1 class="glitch" data-text="{{ page.title | escape }}">{{ page.title | escape }}</h1>
-         </div>
-      </header>
 
     {%- if site.releases.size > 0 -%}
 
     <ul class="post-list">
-        {%- for artist in site.releases -%}
-            <h3>
-              <a class="post-link" href="{{ artist.url | relative_url }}">
-                {{ artist.title | escape }}
-              </a>
-            </h3>
-            <div class="meta">
-                {%- if artist.soundcloudlink -%}
-                <a class="artist-link" href="{{ artist.soundcloudlink }}">soundcloud</a>
-                {%- endif -%}
-                {%- if artist.youtubelink -%}
-                <a class="artist-link" href="{{ artist.youtubelink }}">youtubelink</a>
-                {%- endif -%}
-                {%- if artist.instagramlink -%}
-                <a class="artist-link" href="{{ artist.instagramlink }}">instagram</a>
-                {%- endif -%}
-                {%- if artist.websitelink -%}
-                <a class="artist-link" href="{{ artist.websitelink }}"> website</a>
-                {%- endif -%}
-                {%- if artist.websitelink -%}
-                <a class="artist-link" href="{{ artist.websitelink }}"> website</a>
-                {%- endif -%}
-              {%- if artist.websitelink -%}
-              <a class="artist-link" href="{{ artist.websitelink }}"> website</a>
-              {%- endif -%}
-              {%- if artist.genres.size > 0 -%}
-              <ul class="genres-list">
-              {%- for genre in artist.genres -%}
-              <li class="genre">{{ genre }} </li>
-              {%- endfor -%}
-            </ul>
+        {%- for release in site.releases -%}
+        <li class="event-post"">
 
-              {%- endif -%}
+        <header class="post-header">
+          <div class="glitch-wrapper">
+            <a  href="{{ release.url | relative_url }}"><h1 class="glitch" data-text="{{ release.title | escape }}">{{ release.title | escape }}</h1></a>
+          </div>
+        </header>
 
-
-              </div>
-              {%- if event.ticketlink -%}
-              <a class="ticketlink" href="{{event.ticketlink}}">Tickets</a>
-              {%- endif -%}
       
-            </div>
+            {%- if release.cover -%}
       
-            {%- if event.cover -%}
-      
-            <img src="{{ event.cover | prepend: site.baseurl }}" alt="{{ event.title }}" title="{{ event.title }}">
+            <img src="{{ release.cover | prepend: site.baseurl }}" alt="{{ release.title }}" title="{{ release.title }}">
             {%- endif -%}
             <div class="post-content e-content" itemprop="articleBody">
-              {{ event.content }}
+              {{ release.content }}
             </div>
           </li>
         {%- endfor -%}

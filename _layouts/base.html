@@ -6,13 +6,13 @@
 <body>
   <div class="main">
 
-  {%- include header.html -%}
+    {%- include header.html -%}
 
-  <main class="page-content" aria-label="Content">
-    <div class="wrapper">
-      {{ content }}
-    </div>
-  </main>
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </main>
   </div>
 </body>
 
@@ -32,11 +32,14 @@
     for (var i = 0; i < events.length; i++) {
       const elm = events[i];
       new Date()
-      const parts = elm.getAttribute("x-date").slice(0, 10).split("-").map(x => parseInt(x))
-      const date = new Date(parts[0], parts[1] - 1, parts[2]);
-      console.log(parts, date, now)
-      if (date < now) {
-        elm.style.display = "none"
+      const parts = elm.getAttribute("x-date")
+      if (!!parts) {
+        parts.slice(0, 10).split("-").map(x => parseInt(x))
+        const date = new Date(parts[0], parts[1] - 1, parts[2]);
+        console.log(parts, date, now)
+        if (date < now) {
+          elm.style.display = "none"
+        }
       }
 
 

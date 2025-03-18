@@ -27,26 +27,8 @@
   }
 }
 
-.site-nav {
-  padding-top: 1em;
 
-  background-color: $background-color;
-  border: 1px solid $border-color-01;
-  border-radius: 5px;
-  // text-align: right;
-  position: static;
-  // float: right;
-  border: none;
-  background-color: inherit;
-  display: flex;
 
-  .page-link {
-    font-size: 0.9em;
-    color: $brand-color;
-    line-height: $base-line-height;
-    margin-right: 10px;
-  }
-}
 
 
 
@@ -171,7 +153,7 @@
  * Posts
  */
 .post-header {
-  margin-bottom: $spacing-unit;
+  margin-bottom: 5px;
 }
 
 .post-title,
