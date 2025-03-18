@@ -38,7 +38,7 @@ padding-bottom:0;
 .event-post {
   background-color: $background-color-alpha;
   margin-top:2em;
-  padding-bottom: 5px;
+  padding: 5px;
   
   .cover {
     min-width: 80%;
@@ -56,6 +56,9 @@ padding-bottom:0;
   }
 }
 .author-footer {
+  display: block;
+  margin: auto;
+  width: 50%;
   text-align: center;
   padding: 1em 0 2em 0;
 }
