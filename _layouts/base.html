@@ -34,9 +34,10 @@
     for (var i = 0; i < events.length; i++) {
       const elm = events[i];
       new Date()
-      const parts = elm.getAttribute("x-date")
+      let parts = elm.getAttribute("x-date")
+      console.log(parts)
       if (!!parts) {
-        parts.slice(0, 10).split("-").map(x => parseInt(x))
+        parts = parts.slice(0, 10).split("-").map(x => parseInt(x))
         const date = new Date(parts[0], parts[1] - 1, parts[2]);
         console.log(parts, date, now)
         if (date < now) {
