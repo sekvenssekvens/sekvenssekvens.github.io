@@ -1,14 +1,19 @@
 ---
 layout: event
+draft: false
 start: 2025-04-05
-starthour: 20
+starthour: 17
 venue: Hulen
-price: 0
+price: 70
+cover: /media/maskedans-ezgif.com-effects.jpg
 title: Maskedans (hulen)
-cover: /media/maskedans.png
-draft: true
 ---
+line up:
 
-lol her er lidt tekst
-
-**foo**
+*   Sarahabibi
+    
+*   Dj Mormor
+    
+*   N.e.girl
+    
+*   Fyns Amt
