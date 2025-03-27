@@ -40,7 +40,10 @@ layout: base
   <ul class="post-list">
     {%- assign year_format = " (%Y) " -%}
     {%- assign date_format = "%-d. %b." -%}
-    {%- for event in site.events -%}
+    {% assign sorted = site.events | sort: 'start'   %}
+
+    {%- for event in sorted -%}
+
     {%- if event.draft==true -%}
     {%- else -%}
     <li class="event-post" x-date="{{ event.start }} ">
