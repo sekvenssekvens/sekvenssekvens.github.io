@@ -31,6 +31,8 @@
     events.length < coming.length <= 0 ? null : coming[0].style.display = "none";
     console.log(events)
     const now = new Date()
+    now.setDate(now.getDate() - 2);
+
     for (var i = 0; i < events.length; i++) {
       const elm = events[i];
       new Date()
