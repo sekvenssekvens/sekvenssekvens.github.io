@@ -1,6 +1,5 @@
 ---
-layout: contact
+layout: page
 title: Contact
 ---
-
-Write us at [sekvenskollektiv@gmail.com](mailto:sekvenskollektiv@gmail.com)
+Write us at [asmusbusck+sekvens@gmail.com](mailto:asmusbusck+sekvens@gmail.com)
