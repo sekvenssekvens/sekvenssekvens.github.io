@@ -10,7 +10,11 @@ price: 110
 ticketlink: https://qr.mobilepay.dk/box/3bfbecf2-69a4-48dc-9302-e23cf9e08b10/pay-in?amount=11000
 title: thermodans
 ---
-![](/media/2.%20Ewa%20Mos.JPG)
+Kom til dansefest på Maskinen så du kan holde varmen i efterårets kulde.
+
+Kom inden kl 22 og få en gratis velkomst drink!
+
+![](/media/berrin.jpg)
 
 ## DJ Berrin Baş
 
@@ -31,7 +35,7 @@ Rather than following trends, Berrin Baş follows feeling. Her selections are in
 *   [instagram](https://www.instagram.com/_berrin_bas_/)
     
 
-Dj Aggi & Dj Salti (sekvens residents)
+## Dj Aggi & Dj Salti (sekvens residents)
 
 Tonight Salti brothers will play each their own set.
 
