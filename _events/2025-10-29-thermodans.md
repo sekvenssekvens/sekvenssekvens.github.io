@@ -16,6 +16,8 @@ Kom inden kl 22 og få en gratis velkomst drink!
 
 ![](/media/berrin.jpg)
 
+![](/media/salti.jpg)
+
 # DJ Berrin Baş
 
 DJ Berrin Baş – A Sound Journey Through the S.W.A.N.A. Regions
