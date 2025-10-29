@@ -1,6 +1,6 @@
 ---
 layout: event
-draft: true
+draft: false
 start: 2025-11-15
 starthour: 20
 end: 2025-11-16
