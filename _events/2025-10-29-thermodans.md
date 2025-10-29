@@ -10,6 +10,8 @@ price: 110
 ticketlink: https://qr.mobilepay.dk/box/3bfbecf2-69a4-48dc-9302-e23cf9e08b10/pay-in?amount=11000
 title: thermodans
 ---
+![](/media/2.%20Ewa%20Mos.JPG)
+
 ## DJ Berrin Baş
 
 DJ Berrin Baş – A Sound Journey Through the S.W.A.N.A. Regions
@@ -22,9 +24,9 @@ Rather than following trends, Berrin Baş follows feeling. Her selections are in
 
 **Links**
 
-*   [strøm festival](https://strm.dk/fast-lytter-berrin-bas/ )
+*   [strøm festival](https://strm.dk/fast-lytter-berrin-bas/)
     
-*   [mixcloud](https://www.mixcloud.com/sohesten/s%C3%B8hesten-071-music-is-for sharing-w-okine-berrin-bas/ )
+*   \[mixcloud\]([https://www.mixcloud.com/sohesten/s%C3%B8hesten-071-music-is-for](https://www.mixcloud.com/sohesten/s%C3%B8hesten-071-music-is-for) sharing-w-okine-berrin-bas/ )
     
 *   [instagram](https://www.instagram.com/_berrin_bas_/)
     
