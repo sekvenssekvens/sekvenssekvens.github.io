@@ -14,6 +14,8 @@ Kom til dansefest på Maskinen så du kan holde varmen i efterårets kulde.
 
 Kom inden kl 22 og få en gratis velkomst drink!
 
+# Aftenens acts:
+
 ![](/media/berrin.jpg)
 
 # DJ Berrin Baş
