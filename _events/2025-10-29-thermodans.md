@@ -16,7 +16,7 @@ Kom inden kl 22 og få en gratis velkomst drink!
 
 ![](/media/berrin.jpg)
 
-## DJ Berrin Baş
+# DJ Berrin Baş
 
 DJ Berrin Baş – A Sound Journey Through the S.W.A.N.A. Regions
 
@@ -30,12 +30,14 @@ Rather than following trends, Berrin Baş follows feeling. Her selections are in
 
 *   [strøm festival](https://strm.dk/fast-lytter-berrin-bas/)
     
-*   \[mixcloud\]([https://www.mixcloud.com/sohesten/s%C3%B8hesten-071-music-is-for](https://www.mixcloud.com/sohesten/s%C3%B8hesten-071-music-is-for) sharing-w-okine-berrin-bas/ )
+*   [mixcloud](https://www.mixcloud.com/sohesten/s%C3%B8hesten-071-music-is-for sharing-w-okine-berrin-bas/ )
     
 *   [instagram](https://www.instagram.com/_berrin_bas_/)
     
 
-## Dj Aggi & Dj Salti (sekvens residents)
+![](/media/salti.jpg)
+
+# Dj Aggi & Dj Salti (sekvens residents)
 
 Tonight Salti brothers will play each their own set.
 
