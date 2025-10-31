@@ -8,6 +8,7 @@ endhour: 2
 venue: Maskinen
 price: 110
 ticketlink: https://qr.mobilepay.dk/box/3bfbecf2-69a4-48dc-9302-e23cf9e08b10/pay-in?amount=11000
+cover: /media/thermodans-1-ezgif.com-optijpeg.jpg
 title: thermodans
 ---
 Kom til dansefest på Maskinen så du kan holde varmen i efterårets kulde.
@@ -32,7 +33,7 @@ Rather than following trends, Berrin Baş follows feeling. Her selections are in
 
 *   [strøm festival](https://strm.dk/fast-lytter-berrin-bas/)
     
-*   [mixcloud](https://www.mixcloud.com/sohesten/s%C3%B8hesten-071-music-is-for sharing-w-okine-berrin-bas/ )
+*   \[mixcloud\]([https://www.mixcloud.com/sohesten/s%C3%B8hesten-071-music-is-for](https://www.mixcloud.com/sohesten/s%C3%B8hesten-071-music-is-for) sharing-w-okine-berrin-bas/ )
     
 *   [instagram](https://www.instagram.com/_berrin_bas_/)
     
