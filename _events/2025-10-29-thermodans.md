@@ -15,7 +15,7 @@ Kom til dansefest på Maskinen så du kan holde varmen i efterårets kulde.
 
 Kom inden kl 22 og få en gratis velkomst drink!
 
-# Aftenens acts:
+# Lineup:
 
 ![](/media/berrin.jpg)
 
@@ -33,7 +33,7 @@ Rather than following trends, Berrin Baş follows feeling. Her selections are in
 
 *   [strøm festival](https://strm.dk/fast-lytter-berrin-bas/)
     
-*   \[mixcloud\]([https://www.mixcloud.com/sohesten/s%C3%B8hesten-071-music-is-for](https://www.mixcloud.com/sohesten/s%C3%B8hesten-071-music-is-for) sharing-w-okine-berrin-bas/ )
+*   \[Mixcloud\]([https://www.mixcloud.com/sohesten/s%C3%B8hesten-071-music-is-for](https://www.mixcloud.com/sohesten/s%C3%B8hesten-071-music-is-for)\-sharing-w-okine-berrin-bas/)
     
 *   [instagram](https://www.instagram.com/_berrin_bas_/)
     
